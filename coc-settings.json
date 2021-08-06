@@ -1,0 +1,6 @@
+{
+    "codeLens.enable": true,
+    "rust-analyzer.lens.enable": true,
+    "rust-analyzer.lens.run": true,
+    "rust-analyzer.inlayHints.parameterHints": true
+}
