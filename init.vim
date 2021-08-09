@@ -50,6 +50,7 @@ Plug 'reedes/vim-litecorrect'
 Plug 'reedes/vim-pencil'
 Plug 'rodjek/vim-puppet'
 Plug 'rust-lang/rust.vim'
+Plug 'sainnhe/sonokai'
 Plug 'shawncplus/phpcomplete.vim'
 Plug 'SirVer/ultisnips'
 Plug 'tomasr/molokai'
@@ -89,12 +90,20 @@ set updatetime=2000
 " try-catch here to solve chicken and egg problem when chef installs plugins
 " on a new machine
 set background=dark
+
+" gruvbox-specific
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='medium'
+
+" sonokai-specific
+" let g:sonokai_style = 'andromeda'
+" let g:sonokai_enable_italic = 1
+
 try
   " colorscheme seoul256
   let g:gruvbox_guisp_fallback = "bg"
   colorscheme gruvbox
+  " colorscheme sonokai
   " colorscheme kolor
   " colorscheme xoria256
 catch
@@ -166,6 +175,7 @@ map Y y$
 " airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme='tomorrow'
+" let g:airline_theme='spaceduck'
 " let g:airline#extensions#ale#enabled = 1
 
 " Toggle pastemode with F9
@@ -470,3 +480,6 @@ let g:dashboard_custom_header =<< trim END
 ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝ ╚═════╝
 END
 
+" sigh.... https://github.com/neovim/neovim/issues/9019. Issue has been
+" open since 2018
+runtime hl_bg_fix.lua
