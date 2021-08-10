@@ -1,5 +1,7 @@
 {
     "codeLens.enable": true,
+    "diagnostic.virtualText": true,
+    "diagnostic.virtualTextCurrentLineOnly": false,
     "rust-analyzer.lens.enable": true,
     "rust-analyzer.lens.run": true,
     "rust-analyzer.inlayHints.parameterHints": true
