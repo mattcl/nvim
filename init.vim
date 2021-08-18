@@ -6,6 +6,7 @@ Plug 'baskerville/bubblegum'
 Plug 'cespare/vim-toml'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dougireton/vim-chef'
+Plug 'EdenEast/nightfox.nvim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'fatih/vim-go'
 Plug 'FooSoft/vim-argwrap'
@@ -90,7 +91,7 @@ set updatetime=2000
 
 " try-catch here to solve chicken and egg problem when chef installs plugins
 " on a new machine
-set background=dark
+" set background=dark
 
 " gruvbox-specific
 let g:gruvbox_italic=1
@@ -100,16 +101,21 @@ let g:gruvbox_contrast_dark='medium'
 " let g:sonokai_style = 'andromeda'
 " let g:sonokai_enable_italic = 1
 
+" nightfox specific
+set termguicolors
+let g:nightfox_style = "nightfox"
+let g:nightfox_italic_comments = 1
+
 try
   " colorscheme seoul256
   let g:gruvbox_guisp_fallback = "bg"
-  colorscheme gruvbox
+  colorscheme nightfox
+  " colorscheme gruvbox
   " colorscheme sonokai
   " colorscheme kolor
   " colorscheme xoria256
 catch
 endtry
-hi default CustInlayHint term=italic cterm=italic ctermfg=DarkGray guifg=#15aabf guibg=NONE
 
 " cursorline with highlight at col 80
 set cursorline
@@ -119,9 +125,9 @@ set colorcolumn=80
 let g:indent_blankline_buftype_exclude = ['dashboard', 'terminal']
 let g:indent_blankline_filetype_exclude = ['dashboard', 'terminal']
 let g:indent_blankline_show_first_indent_level = v:false
-highlight IndentBlanklineChar guifg=#292929 gui=nocombine
+" nightfox-specific indentline color
+highlight IndentBlanklineChar guifg=#202d3d gui=nocombine
 nnoremap <silent> <leader>s :IndentBlanklineToggle<CR>
-
 
 " Bein filetype specific settings
 " spaces instead of tabs, etc
@@ -394,8 +400,15 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " Rust-specific
 " toggle rust inlay hints
 nnoremap <leader>w :call CocAction('runCommand', 'rust-analyzer.toggleInlayHints')<cr>
-hi default link CocRustTypeHint CustInlayHint
-hi default link CocRustChainingHint CustInlayHint
+" hi CustInlayHint term=italic cterm=italic gui=italic ctermfg=DarkGray guifg=DarkGray guibg=NONE
+
+" So these are sort of specific to nightfox. I need a more flexible way to
+" specify these and allow changing themes
+hi CustInlayHint term=italic cterm=italic gui=italic ctermfg=DarkGray guifg=#3a516e guibg=NONE
+hi CustChainInlayHint term=italic cterm=italic gui=italic ctermfg=DarkGray guifg=#2f4259 guibg=NONE
+hi link CocRustTypeHint CustInlayHint
+hi link CocRustChainingHint CustChainInlayHint
+
 " End Coc settings
 
 " Bein FZF
