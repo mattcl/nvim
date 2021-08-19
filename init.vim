@@ -418,13 +418,20 @@ nnoremap <leader>w :call CocAction('runCommand', 'rust-analyzer.toggleInlayHints
 
 " So these are sort of specific to nightfox. I need a more flexible way to
 " specify these and allow changing themes
-hi CustInlayHint term=italic cterm=italic gui=italic ctermfg=DarkGray guifg=#3a516e guibg=NONE
-hi CustChainInlayHint term=italic cterm=italic gui=italic ctermfg=DarkGray guifg=#2f4259 guibg=NONE
+hi CustInlayHint term=italic cterm=italic gui=italic guifg=#4b364d guibg=NONE
+hi CustChainInlayHint term=italic cterm=italic gui=italic guifg=#2f4259 guibg=NONE
 hi link CocRustTypeHint CustInlayHint
 hi link CocRustChainingHint CustChainInlayHint
 
+" Coc lens text
+hi CocCodeLens term=italic gui=italic guifg=#3d7e80
+
+" Warnings, Errors, Info
+hi CocErrorVirtualText   gui=italic guifg=#c94f6d
+hi CocWarningVirtualText gui=italic guifg=#f4a261
+
 " WTF is using conceal here by default supposed to accomplish?
-hi link CocUnusedHighlight CustInlayHint
+hi link CocUnusedHighlight CocWarningVirtualText
 
 " End Coc settings
 

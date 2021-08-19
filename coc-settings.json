@@ -1,8 +1,9 @@
 {
-    "codeLens.enable": true,
+    "codeLens.enable": false,
     "diagnostic.virtualText": true,
-    "diagnostic.virtualTextCurrentLineOnly": true,
+    "diagnostic.virtualTextCurrentLineOnly": false,
     "highlight.colorNames.enable": false,
+    "highlight.disableLanguages": ["gitcommit"],
     "rust-analyzer.lens.enable": true,
-    "rust-analyzer.lens.run": true
+    "rust-analyzer.lens.run": false
 }
