@@ -22,12 +22,15 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/seoul256.vim'
-" order important
+" order important for barbar
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kchmck/vim-coffee-script'
 Plug 'Keithbsmiley/rspec.vim'
 Plug 'kh3phr3n/python-syntax'
 Plug 'lervag/vimtex'
+" order important for gitsigns
+Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'Lokaltog/vim-distinguished'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -260,6 +263,11 @@ nnoremap <silent> <leader>c :ArgWrap<CR>
 let g:UltiSnipsExpandTrigger="<C-j>"
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+
+" Gitsigns
+lua << EOF
+require("gitsigns").setup()
+EOF
 
 " Begin Coc settings, mostly lifted from their github page
 set hidden
