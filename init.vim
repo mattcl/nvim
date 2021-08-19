@@ -106,13 +106,10 @@ let g:nightfox_italic_comments = 1
 let g:nightfox_colors = {'gitSigns': {'change': "#86539e"}}
 
 try
-  " colorscheme seoul256
   let g:gruvbox_guisp_fallback = "bg"
   colorscheme nightfox
   " colorscheme gruvbox
   " colorscheme sonokai
-  " colorscheme kolor
-  " colorscheme xoria256
 catch
 endtry
 
