@@ -122,8 +122,8 @@ set cursorline
 set colorcolumn=80
 
 " indentlines
-let g:indent_blankline_buftype_exclude = ['dashboard', 'terminal']
-let g:indent_blankline_filetype_exclude = ['dashboard', 'terminal']
+let g:indent_blankline_buftype_exclude = ['dashboard', 'terminal', 'vim', 'help']
+let g:indent_blankline_filetype_exclude = ['dashboard', 'terminal', 'vim', 'help']
 let g:indent_blankline_show_first_indent_level = v:false
 " nightfox-specific indentline color
 highlight IndentBlanklineChar guifg=#202d3d gui=nocombine
