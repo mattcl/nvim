@@ -14,14 +14,16 @@ Plug 'glts/vim-magnum'
 Plug 'glts/vim-radical'
 Plug 'godlygeek/tabular'
 Plug 'goldfeld/vim-seek'
+Plug 'hoob3rt/lualine.nvim'
 Plug 'jceb/vim-orgmode'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'jonathanfilip/vim-lucius'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-" order important for barbar
+" order important for barbar/bufferline
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'akinsho/nvim-bufferline.lua'
 Plug 'kchmck/vim-coffee-script'
 Plug 'Keithbsmiley/rspec.vim'
 Plug 'kh3phr3n/python-syntax'
@@ -52,7 +54,6 @@ Plug 'reedes/vim-lexical'
 Plug 'reedes/vim-litecorrect'
 Plug 'reedes/vim-pencil'
 Plug 'rodjek/vim-puppet'
-Plug 'romgrk/barbar.nvim'
 Plug 'rust-lang/rust.vim'
 " Plug 'sainnhe/sonokai'
 Plug 'shawncplus/phpcomplete.vim'
@@ -68,8 +69,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/ListToggle'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/utl.vim'
 Plug 'w0ng/vim-hybrid'
@@ -180,12 +179,6 @@ set cindent
 " misc Key Mappings
 map Y y$
 
-" airline
-let g:airline_powerline_fonts = 1
-let g:airline_theme='tomorrow'
-" let g:airline_theme='spaceduck'
-let g:airline#extensions#ale#enabled = 1
-
 " Toggle pastemode with F9
 set pastetoggle=<F9>
 
@@ -193,15 +186,6 @@ set pastetoggle=<F9>
 " set showtabline=2
 " command T tabnew
 " command TE tabe <q-args>
-
-" Barbar
-nnoremap <silent>t    :BufferPick<CR>
-
-" Sort automatically by...
-nnoremap <silent> <Space>bb :BufferOrderByBufferNumber<CR>
-nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
-nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
-nnoremap <silent> <Space>bw :BufferOrderByWindowNumber<CR>
 
 " Navigating splits
 noremap <C-h> <C-w>h
@@ -259,10 +243,54 @@ let g:UltiSnipsExpandTrigger="<C-j>"
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 
-" Gitsigns
+" Gitsigns, Lualine, Bufferline
 lua << EOF
 require("gitsigns").setup()
+
+require("lualine").setup {
+  options = {
+    theme = "nightfox"
+  },
+  sections = {
+    lualine_x = {
+      {'diagnostics', sources = {"coc"}},
+      'encoding',
+      'fileformat',
+      'filetype'
+    },
+  }
+}
+
+require('bufferline').setup {
+  highlights = {
+    buffer_selected = {
+      gui = "NONE"
+    }
+  },
+  options = {
+    separator_style = "slant"
+  }
+}
 EOF
+
+" Bufferline settings
+" pick to go to
+nnoremap <silent> gb :BufferLinePick<CR>
+
+" pick to close
+nnoremap <silent> gB :BufferLinePickClose<CR>
+
+" cycle
+nnoremap <silent> bn :BufferLineCycleNext<CR>
+nnoremap <silent> bp :BufferLineCyclePrev<CR>
+
+" move
+nnoremap <silent> bN :BufferLineMoveNext<CR>
+nnoremap <silent> bP :BufferLineMovePrev<CR>
+
+
+" Sort automatically by...
+nnoremap <silent> <Space>bb :BufferLineSortByDirectory<CR>
 
 " Begin Coc settings, mostly lifted from their github page
 set hidden
@@ -391,7 +419,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.
