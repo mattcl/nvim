@@ -22,6 +22,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/seoul256.vim'
+" order important
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kchmck/vim-coffee-script'
 Plug 'Keithbsmiley/rspec.vim'
 Plug 'kh3phr3n/python-syntax'
@@ -50,6 +52,7 @@ Plug 'reedes/vim-lexical'
 Plug 'reedes/vim-litecorrect'
 Plug 'reedes/vim-pencil'
 Plug 'rodjek/vim-puppet'
+Plug 'romgrk/barbar.nvim'
 Plug 'rust-lang/rust.vim'
 Plug 'sainnhe/sonokai'
 Plug 'shawncplus/phpcomplete.vim'
@@ -184,15 +187,23 @@ map Y y$
 let g:airline_powerline_fonts = 1
 let g:airline_theme='tomorrow'
 " let g:airline_theme='spaceduck'
-" let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 
 " Toggle pastemode with F9
 set pastetoggle=<F9>
 
 " Tabs
-set showtabline=2
-command T tabnew
-command TE tabe <q-args>
+" set showtabline=2
+" command T tabnew
+" command TE tabe <q-args>
+
+" Barbar
+nnoremap <silent>t    :BufferPick<CR>
+" Sort automatically by...
+nnoremap <silent> <Space>bb :BufferOrderByBufferNumber<CR>
+nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
+nnoremap <silent> <Space>bl :BufferOrderByLanguage<CR>
+nnoremap <silent> <Space>bw :BufferOrderByWindowNumber<CR>
 
 " Navigating splits
 noremap <C-h> <C-w>h
@@ -439,49 +450,8 @@ function FuzzyFind()
 endfunction
 
 nmap <c-p> :call FuzzyFind()<cr>
-
-" Search lines in all open buffers
-function! s:line_handler(l)
-  let keys = split(a:l, ':\t')
-  exec 'buf' keys[0]
-  exec keys[1]
-  normal! ^zz
-endfunction
-
-function! s:buffer_lines()
-  let res = []
-  for b in filter(range(1, bufnr('$')), 'buflisted(v:val)')
-    call extend(res, map(getbufline(b,0,"$"), 'b . ":\t" . (v:key + 1) . ":\t" . v:val '))
-  endfor
-  return res
-endfunction
-
-command! FZFLines call fzf#run({
-\   'source':  <sid>buffer_lines(),
-\   'sink':    function('<sid>line_handler'),
-\   'options': '--extended --nth=3..',
-\   'down':    '60%'
-\})
-
-nmap <leader>g :FZFLines<cr>
-
-function! s:buflist()
-  redir => ls
-  silent ls
-  redir END
-  return split(ls, '\n')
-endfunction
-
-function! s:bufopen(e)
-  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
-endfunction
-
-nnoremap <silent> <c-i> :call fzf#run({
-\   'source':  reverse(<sid>buflist()),
-\   'sink':    function('<sid>bufopen'),
-\   'options': '+m',
-\   'down':    len(<sid>buflist()) + 2
-\ })<CR>
+nmap <leader>g :Lines<cr>
+nnoremap <silent> <c-i> :Buffers<CR>
 " End FZF settings
 
 " dashboard
