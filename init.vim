@@ -2,7 +2,6 @@
 call plug#begin()
 
 Plug 'b4b4r07/vim-hcl'
-Plug 'baskerville/bubblegum'
 Plug 'cespare/vim-toml'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'dougireton/vim-chef'
@@ -21,7 +20,6 @@ Plug 'jonathanfilip/vim-lucius'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'junegunn/seoul256.vim'
 " order important for barbar
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kchmck/vim-coffee-script'
@@ -31,7 +29,6 @@ Plug 'lervag/vimtex'
 " order important for gitsigns
 Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
-Plug 'Lokaltog/vim-distinguished'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'markcornick/vim-terraform'
@@ -57,10 +54,9 @@ Plug 'reedes/vim-pencil'
 Plug 'rodjek/vim-puppet'
 Plug 'romgrk/barbar.nvim'
 Plug 'rust-lang/rust.vim'
-Plug 'sainnhe/sonokai'
+" Plug 'sainnhe/sonokai'
 Plug 'shawncplus/phpcomplete.vim'
 Plug 'SirVer/ultisnips'
-Plug 'tomasr/molokai'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
@@ -71,16 +67,13 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-vividchalk'
 Plug 'Valloric/ListToggle'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
 Plug 'vim-scripts/utl.vim'
 Plug 'w0ng/vim-hybrid'
-" Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
-Plug 'zeis/vim-kolor'
 
 call plug#end()
 
@@ -111,6 +104,7 @@ let g:gruvbox_contrast_dark='medium'
 set termguicolors
 let g:nightfox_style = "nightfox"
 let g:nightfox_italic_comments = 1
+let g:nightfox_colors = {'gitSigns': {'change': "#86539e"}}
 
 try
   " colorscheme seoul256
@@ -202,6 +196,7 @@ set pastetoggle=<F9>
 
 " Barbar
 nnoremap <silent>t    :BufferPick<CR>
+
 " Sort automatically by...
 nnoremap <silent> <Space>bb :BufferOrderByBufferNumber<CR>
 nnoremap <silent> <Space>bd :BufferOrderByDirectory<CR>
@@ -331,7 +326,7 @@ function! s:show_documentation()
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
@@ -428,6 +423,9 @@ hi CustChainInlayHint term=italic cterm=italic gui=italic ctermfg=DarkGray guifg
 hi link CocRustTypeHint CustInlayHint
 hi link CocRustChainingHint CustChainInlayHint
 
+" WTF is using conceal here by default supposed to accomplish?
+hi link CocUnusedHighlight CustInlayHint
+
 " End Coc settings
 
 " Bein FZF
@@ -472,6 +470,12 @@ let g:dashboard_custom_header =<< trim END
 ██████╔╝╚██████╔╝██║ ╚████║   ██║       ██║     ██║  ██║██║ ╚████║██║╚██████╗
 ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝   ╚═╝       ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝ ╚═════╝
 END
+
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+" :hi default CocUnderline cterm=underline gui=underline
 
 " sigh.... https://github.com/neovim/neovim/issues/9019. Issue has been
 " open since 2018
