@@ -101,13 +101,29 @@ let g:gruvbox_contrast_dark='medium'
 
 " nightfox specific
 set termguicolors
-let g:nightfox_style = "nightfox"
-let g:nightfox_italic_comments = 1
-let g:nightfox_colors = {'gitSigns': {'change': "#86539e"}}
+
+lua << EOF
+vim.g.nightfox_style = "nightfox"
+vim.g.nightfox_italic_comments = 1
+vim.g.nightfox_colors = {
+  bg = "#131a24",
+  bg_alt = "#0c1117",
+  bg_float = "#192330",
+  bg_highlight = "#1e2836",
+  bg_popup = "#192330",
+  bg_sidebar = "#0c1117",
+  bg_statusline = "#0c1117",
+  gitSigns = {
+    change = "#86539e"
+  }
+}
+
+require('nightfox').set()
+EOF
 
 try
   let g:gruvbox_guisp_fallback = "bg"
-  colorscheme nightfox
+  " colorscheme nightfox
   " colorscheme gruvbox
   " colorscheme sonokai
 catch
@@ -115,14 +131,18 @@ endtry
 
 " cursorline with highlight at col 80
 set cursorline
+
+" color column
 set colorcolumn=80
+" nightfox ties this to the visual select, so just override specifically
+hi ColorColumn ctermbg=1 guibg=#18212e
 
 " indentlines
 let g:indent_blankline_buftype_exclude = ['dashboard', 'terminal', 'vim', 'help']
 let g:indent_blankline_filetype_exclude = ['dashboard', 'terminal', 'vim', 'help']
 let g:indent_blankline_show_first_indent_level = v:false
 " nightfox-specific indentline color
-highlight IndentBlanklineChar guifg=#202d3d gui=nocombine
+highlight IndentBlanklineChar guifg=#18212e gui=nocombine
 nnoremap <silent> <leader>s :IndentBlanklineToggle<CR>
 
 " Bein filetype specific settings
