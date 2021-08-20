@@ -36,6 +36,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'markcornick/vim-terraform'
 Plug 'mattn/calendar-vim'
 Plug 'mattn/emmet-vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'yuezk/vim-js'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -289,6 +290,14 @@ require('bufferline').setup {
     separator_style = "slant"
   }
 }
+
+require('nvim-treesitter.configs').setup {
+  ensure_installed = "maintained",
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false
+  }
+}
 EOF
 
 " Bufferline settings
@@ -516,6 +525,9 @@ nmap <leader>g :Lines<cr>
 nnoremap <silent> <c-i> :Buffers<CR>
 " End FZF settings
 
+" python interpreter
+let g:python3_host_prog = '/home/matt/.virtualenvs/neovim/bin/python'
+
 " dashboard
 let g:dashboard_default_executive ='fzf'
 let g:dashboard_custom_header =<< trim END
@@ -532,6 +544,7 @@ map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 " :hi default CocUnderline cterm=underline gui=underline
+
 
 " sigh.... https://github.com/neovim/neovim/issues/9019. Issue has been
 " open since 2018
