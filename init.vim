@@ -470,9 +470,12 @@ hi link CocRustChainingHint CustChainInlayHint
 
 " Coc lens text
 hi CocCodeLens term=italic gui=italic guifg=#3d7e80
-
+" {error = ' ', warn = ' ', info = ' '}
 " Warnings, Errors, Info
+hi CocErrorSign                     guifg=#c94f6d
 hi CocErrorVirtualText   gui=italic guifg=#c94f6d
+
+hi CocWarningSign                   guifg=#f4a261
 hi CocWarningVirtualText gui=italic guifg=#f4a261
 
 " WTF is using conceal here by default supposed to accomplish?
