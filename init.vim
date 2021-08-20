@@ -195,6 +195,7 @@ set cindent
 
 " misc Key Mappings
 map Y y$
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 
 " Toggle pastemode with F9
 set pastetoggle=<F9>
