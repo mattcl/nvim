@@ -105,22 +105,27 @@ let g:gruvbox_contrast_dark='medium'
 set termguicolors
 
 lua << EOF
-vim.g.nightfox_style = "nightfox"
-vim.g.nightfox_italic_comments = 1
-vim.g.nightfox_colors = {
-  bg = "#131a24",
-  bg_alt = "#0c1117",
-  bg_float = "#192330",
-  bg_highlight = "#1e2836",
-  bg_popup = "#192330",
-  bg_sidebar = "#0c1117",
-  bg_statusline = "#0c1117",
-  gitSigns = {
-    change = "#86539e"
+local nightfox = require('nightfox')
+nightfox.setup({
+  fox = "nightfox",
+  styles = {
+    comments = "italic",
+  },
+  colors = {
+    bg = "#131a24",
+    bg_alt = "#0c1117",
+    bg_float = "#192330",
+    bg_highlight = "#1e2836",
+    bg_popup = "#192330",
+    bg_sidebar = "#0c1117",
+    bg_statusline = "#0c1117",
+    gitSigns = {
+      change = "#86539e"
+    }
   }
-}
+})
 
-require('nightfox').set()
+nightfox.load()
 EOF
 
 try
