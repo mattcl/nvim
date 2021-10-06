@@ -5,7 +5,7 @@
     "diagnostic.infoSign": "",
     "diagnostic.warningSign": "",
     "diagnostic.virtualText": true,
-    "diagnostic.virtualTextCurrentLineOnly": false,
+    "diagnostic.virtualTextCurrentLineOnly": true,
     "diagnostic.virtualTextPrefix": "   ",
     "diagnostic-languageserver.filetypes": {
         "sh": "shellcheck"
