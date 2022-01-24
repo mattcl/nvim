@@ -6,9 +6,41 @@ mod tests {
 }
 endsnippet
 
+snippet ntests "nested test case module" !b
+#[cfg(test)]
+mod tests {
+	mod NESTED {
+		use super::super::*;
+		$0
+	}
+}
+endsnippet
+
 snippet test "test case" !b
 #[test]
 fn ${1:TEST_NAME}() {$0}
+endsnippet
+
+snippet itest "ignored test case" !b
+#[test]
+#[ignore]
+fn ${1:TEST_NAME}() {$0}
+endsnippet
+
+snippet svr "solver body" !b
+const ID: &'static str = "$0";
+const DAY: usize = DAY_NUM;
+
+type P1 = TYPE;
+type P2 = TYPE;
+
+fn part_one(&mut self) -> Self::P1 {
+	todo!()
+}
+
+fn part_two(&mut self) -> Self::P2 {
+	todo!()
+}
 endsnippet
 
 snippet todo "todo" !w
@@ -20,7 +52,7 @@ snippet fixme "fixme" !w
 endsnippet
 
 snippet der "derive" !b
-#[derive(Debug, Clone$0)]
+#[derive(Debug, Clone, Copy, Default, Eq, PartialEq$0)]
 endsnippet
 
 snippet disp "display" !b
@@ -106,4 +138,28 @@ impl From<std::io::Error> for ${11:$1} {
 		${13:$1}::IOError(err)
 	}
 }$0
+endsnippet
+
+snippet moddoc "module-level documentation" !b
+//! ${1:[short sentence explaining what it is]}
+//!
+//! ${2:[more detailed explanation]}
+//!
+//! # Examples
+//! \`\`\`
+//! use ${3:mymodule};
+//! ${4:...}
+//! \`\`\`$0
+endsnippet
+
+snippet doc "function/struct-level documentation" !b
+/// ${1:[short sentence explaining what it is]}
+///
+/// ${2:[more detailed explanation]}
+///
+/// # Examples
+/// \`\`\`
+/// use ${3:mymodule};
+/// ${4:...}
+/// \`\`\`$0
 endsnippet

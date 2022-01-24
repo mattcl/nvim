@@ -182,7 +182,8 @@ autocmd FileType eruby,html,css,js EmmetInstall
 
 augroup prose
   autocmd!
-  autocmd FileType markdown,mkd call litecorrect#init()
+  autocmd FileType markdown,mkd call pencil#init({'wrap': 'hard', 'textwidth': 79})
+                            \ | call litecorrect#init()
                             \ | setlocal spell spelllang=en_us
                             \ | setlocal spellcapcheck=
 augroup END
