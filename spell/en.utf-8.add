@@ -4,3 +4,6 @@ Kaniko
 Lum
 Chun
 memoized
+rspec
+pytest
+autouse

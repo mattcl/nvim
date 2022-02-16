@@ -172,6 +172,7 @@ autocmd Filetype hcl setlocal ts=2 sts=2 sw=2
 autocmd Filetype java setlocal ts=4 sts=4 sw=4 colorcolumn=120
 autocmd Filetype php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType rust setlocal commentstring=//\ %s
+autocmd Filetype c setlocal ts=4 sts=4 sw=4
 autocmd Filetype gitcommit setlocal colorcolumn=50,72
 
 " set dispatch for file types
