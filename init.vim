@@ -159,6 +159,8 @@ set tabstop=2
 set expandtab
 set autoindent
 set expandtab
+set spelllang=en_us
+set spellsuggest=best,9
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
 autocmd Filetype json setlocal ts=4 sts=4 sw=4
 autocmd Filetype js setlocal ts=2 sts=2 sw=2
@@ -208,6 +210,13 @@ nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 
 " Toggle pastemode with F9
 set pastetoggle=<F9>
+
+" Toggle spell checking with F11
+nnoremap <silent> <F8> :set spell!<cr>
+inoremap <silent> <F8> <C-O>:set spell!<cr>
+
+nnoremap <silent> <F7> :<C-u>PFormatToggle<cr>
+inoremap <silent> <F7> <C-o>:PFormatToggle<cr>
 
 " Tabs
 " set showtabline=2

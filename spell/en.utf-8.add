@@ -12,3 +12,5 @@ pulumi
 frontend
 backend
 runtime
+config
+configs
