@@ -4,5 +4,11 @@ Kaniko
 Lum
 Chun
 memoized
+rspec
+pytest
+autouse
+jenkins
+pulumi
+frontend
+backend
 runtime
-YAML
