@@ -7,3 +7,8 @@ memoized
 rspec
 pytest
 autouse
+jenkins
+pulumi
+frontend
+backend
+runtime
