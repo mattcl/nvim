@@ -105,27 +105,27 @@ let g:gruvbox_contrast_dark='medium'
 set termguicolors
 
 lua << EOF
-local nightfox = require('nightfox')
-nightfox.setup({
-  fox = "nightfox",
-  styles = {
-    comments = "italic",
-  },
-  colors = {
-    bg = "#131a24",
-    bg_alt = "#0c1117",
-    bg_float = "#192330",
-    bg_highlight = "#1e2836",
-    bg_popup = "#192330",
-    bg_sidebar = "#0c1117",
-    bg_statusline = "#0c1117",
-    gitSigns = {
-      change = "#86539e"
+require('nightfox').setup({
+  options = {
+    styles = {
+      comments = "italic",
+    },
+    colors = {
+      bg = "#131a24",
+      bg_alt = "#0c1117",
+      bg_float = "#192330",
+      bg_highlight = "#1e2836",
+      bg_popup = "#192330",
+      bg_sidebar = "#0c1117",
+      bg_statusline = "#0c1117",
+      gitSigns = {
+        change = "#86539e"
+      }
     }
   }
 })
 
-nightfox.load()
+vim.cmd("colorscheme nightfox")
 EOF
 
 try
@@ -298,7 +298,7 @@ require("lualine").setup {
   sections = {
     lualine_c = {
       'filename',
-      { gps.get_location, condition = gps.is_available },
+      { gps.get_location, cond = gps.is_available },
     },
     lualine_x = {
       {'diagnostics', sources = {"coc"}},
@@ -321,7 +321,7 @@ require('bufferline').setup {
 }
 
 require('nvim-treesitter.configs').setup {
-  ensure_installed = "maintained",
+  ensure_installed = "all",
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false
