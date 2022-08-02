@@ -32,7 +32,7 @@ Plug 'lervag/vimtex'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'lukas-reineke/indent-blankline.nvim'
+" Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'markcornick/vim-terraform'
 Plug 'mattn/calendar-vim'
 Plug 'mattn/emmet-vim'
@@ -286,6 +286,12 @@ let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 
 " Gitsigns, Lualine, Bufferline
 lua << EOF
+
+-- require("indent_blankline").setup {
+--     show_current_context = true,
+--     show_current_context_start = true,
+-- }
+
 require("gitsigns").setup()
 local gps = require("nvim-gps")
 gps.setup {

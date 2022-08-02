@@ -1,6 +1,10 @@
 {
     "codeLens.enable": true,
-    "codeLens.position":"right_align",
+    "codeLens.position": "right_align",
+    "suggest.floatConfig": {"border": true, "rounded": true, "borderhighlight": "FloatBorder"},
+    "signature.floatConfig": {"border": true, "rounded": true, "borderhighlight": "FloatBorder"},
+    "diagnostic.floatConfig": {"border": true, "rounded": true, "borderhighlight": "FloatBorder"},
+    "suggest.selection": "first",
     "diagnostic.errorSign": "",
     "diagnostic.hintSign": "",
     "diagnostic.infoSign": "",
