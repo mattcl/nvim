@@ -17,6 +17,7 @@
     },
     "highlight.colorNames.enable": false,
     "highlight.disableLanguages": ["gitcommit"],
+    "rust-analyzer.disableProgressNotifications": false,
     "rust-analyzer.lens.enable": true,
     "rust-analyzer.lens.run.enable": false,
     "rust-analyzer.lens.debug.enable": false,

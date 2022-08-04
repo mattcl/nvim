@@ -32,7 +32,7 @@ Plug 'lervag/vimtex'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'Lokaltog/vim-easymotion'
-" Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'markcornick/vim-terraform'
 Plug 'mattn/calendar-vim'
 Plug 'mattn/emmet-vim'
@@ -150,7 +150,7 @@ let g:indent_blankline_buftype_exclude = ['dashboard', 'terminal', 'vim', 'help'
 let g:indent_blankline_filetype_exclude = ['dashboard', 'terminal', 'vim', 'help']
 let g:indent_blankline_show_first_indent_level = v:false
 " nightfox-specific indentline color
-highlight IndentBlanklineChar guifg=#18212e gui=nocombine
+" highlight IndentBlanklineChar guifg=#18212e gui=nocombine
 nnoremap <silent> <leader>s :IndentBlanklineToggle<CR>
 
 " Bein filetype specific settings
@@ -287,10 +287,10 @@ let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 " Gitsigns, Lualine, Bufferline
 lua << EOF
 
--- require("indent_blankline").setup {
---     show_current_context = true,
---     show_current_context_start = true,
--- }
+require("indent_blankline").setup {
+    show_current_context = true,
+--    show_current_context_start = true,
+}
 
 require("gitsigns").setup()
 local gps = require("nvim-gps")
