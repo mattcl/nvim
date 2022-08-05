@@ -40,12 +40,12 @@ ks('n', '<leader>i', ':set list!<cr>', {noremap = true, silent = true})
 --[[ tabularize aligning --]]
 ks('n', '<Leader>a=', ':Tabularize /=<cr>')          -- align on =
 ks('v', '<Leader>a=', ':Tabularize /=<cr>')          -- align on =
-ks('n', '<Leader>at', ':Tabularize /\\|<cr>')       -- align on |
-ks('v', '<Leader>at', ':Tabularize /\\|<cr>')       -- align on |
-ks('n', '<Leader>aa', ':Tabularize /=><cr>')        -- align on =>
-ks('v', '<Leader>aa', ':Tabularize /=><cr>')        -- align on =>
-ks('n', '<Leader>a-', ':Tabularize /--<cr>')        -- align on --
-ks('v', '<Leader>a-', ':Tabularize /--<cr>')        -- align on --
+ks('n', '<Leader>at', ':Tabularize /\\|<cr>')        -- align on |
+ks('v', '<Leader>at', ':Tabularize /\\|<cr>')        -- align on |
+ks('n', '<Leader>aa', ':Tabularize /=><cr>')         -- align on =>
+ks('v', '<Leader>aa', ':Tabularize /=><cr>')         -- align on =>
+ks('n', '<Leader>a-', ':Tabularize /--<cr>')         -- align on --
+ks('v', '<Leader>a-', ':Tabularize /--<cr>')         -- align on --
 ks('n', '<Leader>a:', ':Tabularize /:\\zs/l1c0<cr>') -- align on :
 ks('v', '<Leader>a:', ':Tabularize /:\\zs/l1c0<cr>') -- align on :
 ks('n', '<Leader>a,', ':Tabularize /,\\zs/l1c0<cr>') -- align on ,
