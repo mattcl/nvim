@@ -54,3 +54,14 @@ opt.signcolumn    = 'yes'                      -- always display the sign column
 opt.termguicolors = true                       -- required by nightfox
 opt.cursorline    = true                       -- highlight the line with the cursor
 opt.colorcolumn   = "80"                       -- indicate 80 chars by coloring column
+
+--[[
+yeah, this sucks, but the default guicursor def doesn't have an associated
+highlight. Otherwise, we end up with the situation where the cursor disappears
+in indent line highlights
+--]]
+opt.guicursor = {
+    "n-v-c-sm:block-Cursor",
+    "i-ci-ve:ver25-Cursor",
+    "r-cr-o:hor20-Cursor",
+}
