@@ -56,12 +56,11 @@ opt.cursorline    = true                       -- highlight the line with the cu
 opt.colorcolumn   = "80"                       -- indicate 80 chars by coloring column
 
 --[[
-yeah, this sucks, but the default guicursor def doesn't have an associated
-highlight. Otherwise, we end up with the situation where the cursor disappears
-in indent line highlights
+We're just explicitly setting 'inverse' here, but it's not necessary since it's
+the default. If I _do_ need to change this, it's nice to have this block here.
 --]]
 opt.guicursor = {
-    "n-v-c-sm:block-Cursor",
-    "i-ci-ve:ver25-Cursor",
-    "r-cr-o:hor20-Cursor",
+    "n-v-c-sm:block-inverse",
+    "i-ci-ve:ver25-inverse",
+    "r-cr-o:hor20-inverse",
 }
