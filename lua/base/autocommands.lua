@@ -65,3 +65,9 @@ autocmd('FileType', {
     end
 })
 
+autocmd({"BufRead", "BufNewFile"}, {
+    pattern = 'Jenkinsfile',
+    callback = function()
+        opt_local.filetype = 'groovy'
+    end
+})
