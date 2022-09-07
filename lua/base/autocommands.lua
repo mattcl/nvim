@@ -32,7 +32,7 @@ autocmd('FileType', {
 autocmd('FileType', {
     pattern = 'rust',
     callback = function()
-        opt_local.commentstring = '//\\ %s'
+        opt_local.commentstring = '// %s'
     end
 })
 
