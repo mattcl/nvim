@@ -11,7 +11,7 @@ cmd("hi link CocRustTypeHint CustInlayHint")
 cmd("hi link CocRustChainingHint CustChainInlayHint")
 
 -- Coc lens text
-cmd("hi CocCodeLens term=italic gui=italic guifg=#3d7e80")
+cmd("hi CocInlayHint term=italic gui=italic guifg=#613f4f guibg=NONE")
 -- {error = ' ', warn = ' ', info = ' '}
 -- Warnings, Errors, Info
 cmd("hi CocErrorSign                     guifg=#c94f6d")

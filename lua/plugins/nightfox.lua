@@ -1,4 +1,10 @@
 require('nightfox').setup({
+    modules = {
+        coc = {
+            enable = true,
+            background = false,
+        }
+    },
     options = {
         styles = {
             comments = "italic",
