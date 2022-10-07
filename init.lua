@@ -15,6 +15,7 @@ require('plugins/dashboard')
 require('plugins/fzf')
 require('plugins/indent')
 require('plugins/lualine')
+require('plugins/markdown')
 require('plugins/nightfox')
 require('plugins/tree')
 
