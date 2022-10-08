@@ -21,3 +21,7 @@ cmd("hi CocWarningVirtualText gui=italic guifg=#f4a261")
 
 -- WTF is using conceal here by default supposed to accomplish?
 cmd("hi link CocUnusedHighlight CocWarningVirtualText")
+
+-- Sigh. This was clearly broken upstream, but their "solution" is just
+-- "define your own group"
+cmd("hi CocMenuSel guibg=#1e2836")
