@@ -1,10 +1,12 @@
 require('bufferline').setup {
     highlights = {
         buffer_selected = {
-            gui = "NONE"
+            underline = true,
+            undercurl = true,
+            italic = true,
         }
     },
     options = {
-        separator_style = "slant"
+        separator_style = "sloped"
     }
 }

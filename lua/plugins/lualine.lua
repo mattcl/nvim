@@ -1,12 +1,8 @@
 require("gitsigns").setup()
-local gps = require("nvim-gps")
-gps.setup {
-  icons = {
-    ["class-name"] = " ",
-    ["function-name"] = " ",
-    ["method-name"] = " ",
-  }
-}
+
+require('aerial').setup({
+    backends = { "treesitter" },
+})
 
 require("lualine").setup {
   options = {
@@ -15,7 +11,7 @@ require("lualine").setup {
   sections = {
     lualine_c = {
       'filename',
-      { gps.get_location, cond = gps.is_available },
+      'aerial',
     },
     lualine_x = {
       {'diagnostics', sources = {"coc"}},
@@ -23,5 +19,5 @@ require("lualine").setup {
       'fileformat',
       'filetype'
     },
-  }
+  },
 }
