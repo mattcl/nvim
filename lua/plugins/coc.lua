@@ -1,3 +1,18 @@
+local g = vim.g
+
+g.coc_global_extensions = {
+    'coc-diagnostic',
+    'coc-eslint',
+    'coc-pyright',
+    'coc-rome',
+    'coc-rust-analyzer',
+    'coc-sh',
+    'coc-snippets',
+    'coc-toml',
+    'coc-yaml',
+    'coc-vimlsp',
+}
+
 vim.api.nvim_exec([[
 function! CheckBackspace() abort
   let col = col('.') - 1

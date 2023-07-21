@@ -57,5 +57,6 @@
         "unit": "塞unit",
         "value": " val",
         "variable": " var"
-    }
+    },
+    "snippets.ultisnips.pythonPrompt": false
 }

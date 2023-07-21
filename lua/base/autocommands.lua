@@ -58,11 +58,13 @@ autocmd('FileType', {
     pattern = {'markdown', 'md'},
     group = prose,
     callback = function()
-        vim.call('pencil#init', {wrap = 'hard', textwidth = 79, conceallevel = 0})
+        -- vim.call('pencil#init', {wrap = 'hard', textwidth = 79, conceallevel = 0})
         vim.call('litecorrect#init')
+        opt_local.textwidth = 80
         opt_local.spell = true
         opt_local.spelllang = 'en_us'
         opt_local.foldlevel = 20
+        opt_local.conceallevel = 2
     end
 })
 
