@@ -47,6 +47,7 @@ Plug 'mileszs/ack.vim'
 Plug 'morhetz/gruvbox'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'myusuf3/numbers.vim'
+Plug 'NoahTheDuke/vim-just'
 Plug('neoclide/coc.nvim', {branch= 'release'})
 -- keep this here
 Plug('antoinemadec/coc-fzf', {branch = 'release'})
