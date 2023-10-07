@@ -10,7 +10,7 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
 )
 
 lspconfig.bashls.setup {}
--- lspconfig.biome.setup {}
+lspconfig.biome.setup {}
 lspconfig.lua_ls.setup {}
 lspconfig.pylsp.setup {
     settings = {
