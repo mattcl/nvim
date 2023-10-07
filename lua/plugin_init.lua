@@ -15,6 +15,7 @@ Plug 'hrsh7th/nvim-cmp'
 
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
+Plug "rafamadriz/friendly-snippets"
 
 Plug 'nvim-lua/plenary.nvim'
 Plug('nvim-telescope/telescope.nvim', {['tag'] = '0.1.3' })
@@ -78,7 +79,7 @@ Plug 'rodjek/vim-puppet'
 Plug 'rust-lang/rust.vim'
 -- Plug 'sainnhe/sonokai'
 Plug 'shawncplus/phpcomplete.vim'
-Plug 'SirVer/ultisnips'
+-- Plug 'SirVer/ultisnips'
 Plug 'stevearc/aerial.nvim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'

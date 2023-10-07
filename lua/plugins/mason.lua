@@ -4,7 +4,7 @@ require("mason-lspconfig").setup {
         "bashls",
         "biome",
         "lua_ls",
-        "pyright",
+        "pylsp",
         "rust_analyzer",
         "taplo",
         "tsserver",

@@ -1,9 +1,37 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
+
+local lsp_defaults = lspconfig.util.default_config
+
+lsp_defaults.capabilities = vim.tbl_deep_extend(
+    'force',
+    lsp_defaults.capabilities,
+    require('cmp_nvim_lsp').default_capabilities()
+)
+
 lspconfig.bashls.setup {}
-lspconfig.biome.setup {}
+-- lspconfig.biome.setup {}
 lspconfig.lua_ls.setup {}
-lspconfig.pyright.setup {}
+lspconfig.pylsp.setup {
+    settings = {
+        pylsp = {
+            plugins = {
+                flake8 = {
+                    maxLineLength = 120,
+                },
+                pycodestyle = {
+                    maxLineLength = 120,
+                },
+                pyflakes = {
+                    enabled = false,
+                },
+                jedi_completion = {
+                    include_params = true,
+                },
+            },
+        },
+    },
+}
 -- lspconfig.rust_analyzer.setup {}
 -- lspconfig.rust_analyzer.setup {
 --   -- Server-specific settings. See `:help lspconfig-setup`
