@@ -37,7 +37,6 @@ Plug 'hoob3rt/lualine.nvim'
 Plug 'jceb/vim-orgmode'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'jonathanfilip/vim-lucius'
--- Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'kaarmu/typst.vim'
@@ -65,9 +64,6 @@ Plug 'morhetz/gruvbox'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'myusuf3/numbers.vim'
 Plug 'NoahTheDuke/vim-just'
--- Plug('neoclide/coc.nvim', {branch= 'release'})
--- keep this here
--- Plug('antoinemadec/coc-fzf', {branch = 'release'})
 Plug 'noprompt/vim-yardoc'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'

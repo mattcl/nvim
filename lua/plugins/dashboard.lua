@@ -16,7 +16,7 @@ db.custom_header = {
 db.custom_center = {
     {
         desc = ' Open file             ',
-        action = 'FZF',
+        action = 'Telescope find_files',
         shortcut = "SPC f o"
     }
 }
