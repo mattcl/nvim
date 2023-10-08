@@ -7,6 +7,6 @@ require('bufferline').setup {
         }
     },
     options = {
-        separator_style = "sloped"
+        separator_style = {"|", "|"}
     }
 }

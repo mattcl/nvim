@@ -21,6 +21,7 @@ require('plugins/lualine')
 require('plugins/markdown')
 require('plugins/nightfox')
 require('plugins/tree')
+require('plugins/telescope')
 
 -- then remaining colors
 require('base/colors')
