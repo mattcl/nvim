@@ -1,9 +1,6 @@
 require('nightfox').setup({
     modules = {
-        coc = {
-            enable = true,
-            background = false,
-        }
+        indent_blankline = {},
     },
     options = {
         styles = {

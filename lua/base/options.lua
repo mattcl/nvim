@@ -7,9 +7,6 @@ g.UltiSnipsExpandTrigger                   = "<C-j>"
 g.UltiSnipsJumpForwardTrigger              = "<C-j>"
 g.UltiSnipsJumpBackwardTrigger             = "<C-k>"
 g.python3_host_prog                        = os.getenv('NVIM_PYTHON_HOST_PROG')
-g.indent_blankline_buftype_exclude         = {'dashboard', 'terminal', 'vim', 'help'}
-g.indent_blankline_filetype_exclude        = {'dashboard', 'terminal', 'vim', 'help'}
-g.indent_blankline_show_first_indent_level = 'v:false'
 g.dashboard_default_executive              = 'fzf'
 
 -- change how listchars are displayed

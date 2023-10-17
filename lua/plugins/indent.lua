@@ -1,6 +1,15 @@
-require("indent_blankline").setup {
-    show_current_context = true,
-    -- show_current_context_start = true,
-    use_treesitter = true,
-    -- use_treesitter_scope = true,
+require("ibl").setup {
+    exclude = {
+        filetypes = {"dashboard", "terminal", "vim", "help"},
+        buftypes = {"dashboard", "terminal", "vim", "help"},
+    },
+    whitespace = {
+        highlight = {"Whitespace"},
+    },
+    indent = {
+        highlight = {"Whitespace"},
+    },
+    scope = {
+        highlight = {"Label"},
+    }
 }
