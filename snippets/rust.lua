@@ -25,6 +25,18 @@ local snippets = {}
 table.insert(
     snippets,
     s(
+        {trig = "dder", dscr = "default derive"},
+        fmt(
+        [[
+        #[derive(Debug, Default, Clone{})]
+        ]],
+        {i(1)})
+    )
+)
+
+table.insert(
+    snippets,
+    s(
         {trig = "tests", dscr = "define a test module"},
         fmt(
         [[
