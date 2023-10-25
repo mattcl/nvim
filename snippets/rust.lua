@@ -28,6 +28,7 @@ table.insert(
         {trig = "tests", dscr = "define a test module"},
         fmt(
         [[
+        #[cfg(test)]
         mod tests {{
             use super::*;
             {}
