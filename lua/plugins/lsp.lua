@@ -17,9 +17,12 @@ lspconfig.pylsp.setup {
         pylsp = {
             plugins = {
                 flake8 = {
+                    ignore = {"E203"},
+                    extendIgnore = {"E203"},
                     maxLineLength = 120,
                 },
                 pycodestyle = {
+                    ignore = {"E203"},
                     maxLineLength = 120,
                 },
                 pyflakes = {
@@ -39,6 +42,7 @@ lspconfig.pylsp.setup {
 --     ['rust-analyzer'] = {},
 --   },
 -- }
+lspconfig.solargraph.setup {}
 lspconfig.taplo.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.typst_lsp.setup {}

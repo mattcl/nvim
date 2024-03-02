@@ -10,6 +10,7 @@ cmd("hi CustChainInlayHint term=italic cterm=italic gui=italic guifg=#2f4259 gui
 cmd("hi link CocRustTypeHint CustInlayHint")
 cmd("hi link CocRustChainingHint CustChainInlayHint")
 
+cmd("hi LspInlayHint term=italic gui=italic guifg=#613f4f guibg=NONE")
 -- Coc lens text
 cmd("hi CocInlayHint term=italic gui=italic guifg=#613f4f guibg=NONE")
 -- {error = ' ', warn = ' ', info = ' '}

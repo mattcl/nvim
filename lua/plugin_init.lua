@@ -6,11 +6,12 @@ Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 
 Plug 'neovim/nvim-lspconfig'
-Plug 'simrat39/rust-tools.nvim'
+Plug 'mrcjkb/rustaceanvim'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'hrsh7th/nvim-cmp'
 
 Plug 'L3MON4D3/LuaSnip'
@@ -20,6 +21,7 @@ Plug "rafamadriz/friendly-snippets"
 Plug 'nvim-lua/plenary.nvim'
 Plug('nvim-telescope/telescope-fzf-native.nvim', {['do'] = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" })
 Plug('nvim-telescope/telescope.nvim', {['tag'] = '0.1.3' })
+Plug 'nvim-telescope/telescope-ui-select.nvim'
 
 Plug 'b4b4r07/vim-hcl'
 Plug 'cespare/vim-toml'

@@ -20,6 +20,7 @@ autocmd('FileType', {pattern = 'eruby',      callback = function() set_tabs(2) e
 autocmd('FileType', {pattern = 'yaml',       callback = function() set_tabs(2) end})
 autocmd('FileType', {pattern = 'org',        callback = function() set_tabs(2) end})
 autocmd('FileType', {pattern = 'hcl',        callback = function() set_tabs(2) end})
+autocmd('FileType', {pattern = 'svelte',     callback = function() set_tabs(2) end})
 
 -- git commits have two colorcolumns for the summary and the body
 autocmd('FileType', {

@@ -98,4 +98,41 @@ table.insert(
     )
 )
 
+table.insert(
+    snippets,
+    s(
+        {trig = "atest", dscr = "tokio::test"},
+        fmt(
+        [[
+        #[tokio::test]
+        async fn test_{1}() -> anyhow::Result<()> {{
+            {2}
+        }}
+        ]],
+        {
+            i(1, "TEST"),
+            i(3, "Ok(())"),
+        })
+    )
+)
+
+table.insert(
+    snippets,
+    s(
+        {trig = "dbtest", dscr = "sqlx::test"},
+        fmt(
+        [[
+        #[sqlx::test{2}]
+        async fn test_{1}(pool: sqlx::PgPool) -> anyhow::Result<()> {{
+            {3}
+        }}
+        ]],
+        {
+            i(1, "TEST"),
+            i(2, "(fixtures(\"FIXTURE_PATH_OR_NAME\"))"),
+            i(3, "Ok(())"),
+        })
+    )
+)
+
 return snippets
