@@ -6,6 +6,7 @@ Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 
 Plug 'neovim/nvim-lspconfig'
+Plug 'onsails/lspkind.nvim'
 Plug 'mrcjkb/rustaceanvim'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
