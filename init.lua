@@ -22,6 +22,7 @@ require('plugins/nightfox')
 require('plugins/indent')
 require('plugins/tree')
 require('plugins/telescope')
+require('plugins/ufo')
 
 -- then remaining colors
 require('base/colors')

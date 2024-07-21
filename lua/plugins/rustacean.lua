@@ -5,7 +5,7 @@ vim.g.rustaceanvim = {
                 "n",
                 "<Leader>x",
                 function()
-                    vim.lsp.inlay_hint.enable(nil, not vim.lsp.inlay_hint.is_enabled())
+                    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
                 end
             )
         end,

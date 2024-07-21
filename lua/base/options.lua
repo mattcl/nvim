@@ -40,6 +40,12 @@ opt.termguicolors = true                       -- required by nightfox
 opt.cursorline    = true                       -- highlight the line with the cursor
 opt.colorcolumn   = "80"                       -- indicate 80 chars by coloring column
 
+-- folding
+vim.opt.foldnestmax = 3
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+
+
 --[[
 We're just explicitly setting 'inverse' here, but it's not necessary since it's
 the default. If I _do_ need to change this, it's nice to have this block here.
