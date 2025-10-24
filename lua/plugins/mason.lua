@@ -7,8 +7,8 @@ require("mason-lspconfig").setup {
         "pylsp",
         "rust_analyzer",
         "taplo",
-        "tsserver",
-        "typst_lsp",
+        "tinymist",
+        "ts_ls",
         "yamlls",
     }
 }

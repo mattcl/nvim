@@ -44,8 +44,8 @@ lspconfig.pylsp.setup {
 -- }
 lspconfig.solargraph.setup {}
 lspconfig.taplo.setup {}
-lspconfig.tsserver.setup {}
-lspconfig.typst_lsp.setup {}
+lspconfig.ts_ls.setup {}
+-- lspconfig.typst_lsp.setup {}
 lspconfig.yamlls.setup {}
 
 
