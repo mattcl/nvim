@@ -5,7 +5,8 @@ require("mason-lspconfig").setup {
         "biome",
         "lua_ls",
         "pylsp",
-        "rust_analyzer",
+        -- makes duplicates with rustacean
+        -- "rust_analyzer",
         "taplo",
         "tinymist",
         "ts_ls",

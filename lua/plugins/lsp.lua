@@ -1,18 +1,20 @@
 -- Setup language servers.
-local lspconfig = require('lspconfig')
+-- local lspconfig = require('lspconfig')
 
-local lsp_defaults = lspconfig.util.default_config
+-- local lsp_defaults = lspconfig.util.default_config
 
-lsp_defaults.capabilities = vim.tbl_deep_extend(
-    'force',
-    lsp_defaults.capabilities,
-    require('cmp_nvim_lsp').default_capabilities()
-)
+-- lsp_defaults.capabilities = vim.tbl_deep_extend(
+--     'force',
+--     lsp_defaults.capabilities,
+--     require('cmp_nvim_lsp').default_capabilities()
+-- )
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-lspconfig.bashls.setup {}
-lspconfig.biome.setup {}
-lspconfig.lua_ls.setup {}
-lspconfig.pylsp.setup {
+vim.lsp.config('*', {
+    capabilities = capabilities,
+})
+
+vim.lsp.config('pylsp', {
     settings = {
         pylsp = {
             plugins = {
@@ -34,7 +36,7 @@ lspconfig.pylsp.setup {
             },
         },
     },
-}
+})
 -- lspconfig.rust_analyzer.setup {}
 -- lspconfig.rust_analyzer.setup {
 --   -- Server-specific settings. See `:help lspconfig-setup`
@@ -42,12 +44,14 @@ lspconfig.pylsp.setup {
 --     ['rust-analyzer'] = {},
 --   },
 -- }
-lspconfig.solargraph.setup {}
-lspconfig.taplo.setup {}
-lspconfig.ts_ls.setup {}
--- lspconfig.typst_lsp.setup {}
-lspconfig.yamlls.setup {}
 
+vim.lsp.enable('bashls')
+vim.lsp.enable('biome')
+vim.lsp.enable('lua_ls')
+vim.lsp.enable('pylsp')
+vim.lsp.enable('solargraph')
+vim.lsp.enable('taplo')
+vim.lsp.enable('yamlls')
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -79,7 +83,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set({ 'n', 'v' }, '<space>ca', function()
+        require('fzf-lua').lsp_code_actions{
+            winops = {
+                relative = 'cursor',
+                width = 0.6,
+                height = 0.6,
+                row = 1,
+                preview = { vertical = 'up:70%' },
+            }
+        }
+    end,opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', '<space>f', function()
       vim.lsp.buf.format { async = true }

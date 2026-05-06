@@ -1,101 +1,93 @@
-local Plug = vim.fn['plug#']
+vim.pack.add({
+    'https://github.com/mason-org/mason.nvim',
+    'https://github.com/mason-org/mason-lspconfig.nvim',
+    'https://github.com/neovim/nvim-lspconfig',
+    'https://github.com/onsails/lspkind.nvim',
+    'https://github.com/mrcjkb/rustaceanvim',
+    'https://github.com/hrsh7th/cmp-nvim-lsp',
+    'https://github.com/hrsh7th/cmp-buffer',
+    'https://github.com/hrsh7th/cmp-path',
+    'https://github.com/hrsh7th/cmp-cmdline',
+    'https://github.com/hrsh7th/cmp-nvim-lsp-signature-help',
+    'https://github.com/hrsh7th/nvim-cmp',
+    'https://github.com/L3MON4D3/LuaSnip',
+    'https://github.com/saadparwaiz1/cmp_luasnip',
+    'https://github.com/rafamadriz/friendly-snippets',
+    -- fzf lua
+    'https://github.com/ibhagwan/fzf-lua',
+    'https://github.com/nvim-tree/nvim-web-devicons',
+    -- end
+    'https://github.com/jvirtanen/vim-hcl',
+    'https://github.com/cespare/vim-toml',
+    'https://github.com/dhruvasagar/vim-table-mode',
+    'https://github.com/dougireton/vim-chef',
+    'https://github.com/EdenEast/nightfox.nvim',
+    'https://github.com/elixir-editors/vim-elixir',
+    'https://github.com/fatih/vim-go',
+    'https://github.com/FooSoft/vim-argwrap',
+    {
+        src = 'https://github.com/nvim-treesitter/nvim-treesitter',
+        version = 'main',
+    },
+    {
+        src = 'https://github.com/nvimdev/dashboard-nvim',
+        version = 'f7d6234',
+    },
 
-vim.call('plug#begin')
-
-Plug 'williamboman/mason.nvim'
-Plug 'williamboman/mason-lspconfig.nvim'
-
-Plug 'neovim/nvim-lspconfig'
-Plug 'onsails/lspkind.nvim'
-Plug 'mrcjkb/rustaceanvim'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
-Plug 'hrsh7th/nvim-cmp'
-
-Plug 'L3MON4D3/LuaSnip'
-Plug 'saadparwaiz1/cmp_luasnip'
-Plug "rafamadriz/friendly-snippets"
-
-Plug 'nvim-lua/plenary.nvim'
-Plug('nvim-telescope/telescope-fzf-native.nvim', {['do'] = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build" })
-Plug('nvim-telescope/telescope.nvim', {['tag'] = '0.1.7' })
-Plug 'nvim-telescope/telescope-ui-select.nvim'
-
-Plug 'b4b4r07/vim-hcl'
-Plug 'cespare/vim-toml'
-Plug 'dhruvasagar/vim-table-mode'
-Plug 'dougireton/vim-chef'
-Plug 'EdenEast/nightfox.nvim'
-Plug 'elixir-editors/vim-elixir'
-Plug 'fatih/vim-go'
-Plug 'FooSoft/vim-argwrap'
-Plug('glepnir/dashboard-nvim', {['commit'] = 'f7d6234'})
-Plug 'glts/vim-magnum'
-Plug 'glts/vim-radical'
-Plug 'godlygeek/tabular'
-Plug 'goldfeld/vim-seek'
-Plug 'hoob3rt/lualine.nvim'
-Plug 'jceb/vim-orgmode'
-Plug 'jmcantrell/vim-virtualenv'
-Plug 'jonathanfilip/vim-lucius'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-Plug 'kaarmu/typst.vim'
-Plug 'kevinhwang91/promise-async'
-Plug 'kevinhwang91/nvim-ufo'
--- order important for barbar/bufferline
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'akinsho/nvim-bufferline.lua'
-Plug 'kchmck/vim-coffee-script'
-Plug 'Keithbsmiley/rspec.vim'
-Plug 'kh3phr3n/python-syntax'
-Plug 'lervag/vimtex'
--- order important for gitsigns
-Plug 'nvim-lua/plenary.nvim'
-Plug 'lewis6991/gitsigns.nvim'
-Plug 'Lokaltog/vim-easymotion'
-Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'mattn/calendar-vim'
-Plug 'mattn/emmet-vim'
-Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
-Plug 'yuezk/vim-js'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'metakirby5/codi.vim'
-Plug 'mileszs/ack.vim'
-Plug 'morhetz/gruvbox'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'myusuf3/numbers.vim'
-Plug 'NoahTheDuke/vim-just'
-Plug 'noprompt/vim-yardoc'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'preservim/vim-markdown'
--- Plug 'preservim/vim-pencil'
-Plug 'reedes/vim-lexical'
-Plug 'reedes/vim-litecorrect'
-Plug 'rodjek/vim-puppet'
-Plug 'rust-lang/rust.vim'
--- Plug 'sainnhe/sonokai'
-Plug 'shawncplus/phpcomplete.vim'
-Plug 'stevearc/aerial.nvim'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-fugitive'
--- Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rhubarb'
-Plug 'tpope/vim-speeddating'
-Plug 'tpope/vim-surround'
-Plug 'Valloric/ListToggle'
-Plug 'vim-ruby/vim-ruby'
-Plug 'vim-scripts/utl.vim'
-Plug 'w0ng/vim-hybrid'
-Plug 'wellle/targets.vim'
-
-vim.call('plug#end')
+    'https://github.com/glts/vim-magnum',
+    'https://github.com/glts/vim-radical',
+    'https://github.com/godlygeek/tabular',
+    'https://github.com/goldfeld/vim-seek',
+    'https://github.com/jceb/vim-orgmode',
+    'https://github.com/jmcantrell/vim-virtualenv',
+    'https://github.com/jonathanfilip/vim-lucius',
+    'https://github.com/junegunn/goyo.vim',
+    'https://github.com/junegunn/limelight.vim',
+    'https://github.com/kaarmu/typst.vim',
+    'https://github.com/kevinhwang91/promise-async',
+    'https://github.com/kevinhwang91/nvim-ufo',
+    'https://github.com/akinsho/bufferline.nvim',
+    'https://github.com/nvim-lualine/lualine.nvim',
+    'https://github.com/kchmck/vim-coffee-script',
+    'https://github.com/Keithbsmiley/rspec.vim',
+    'https://github.com/kh3phr3n/python-syntax',
+    'https://github.com/lervag/vimtex',
+    'https://github.com/lewis6991/gitsigns.nvim',
+    'https://github.com/Lokaltog/vim-easymotion',
+    'https://github.com/lukas-reineke/indent-blankline.nvim',
+    'https://github.com/mattn/calendar-vim',
+    'https://github.com/mattn/emmet-vim',
+    'https://github.com/yuezk/vim-js',
+    'https://github.com/HerringtonDarkholme/yats.vim',
+    'https://github.com/maxmellon/vim-jsx-pretty',
+    'https://github.com/metakirby5/codi.vim',
+    'https://github.com/mileszs/ack.vim',
+    'https://github.com/morhetz/gruvbox',
+    'https://github.com/mustache/vim-mustache-handlebars',
+    'https://github.com/myusuf3/numbers.vim',
+    'https://github.com/NoahTheDuke/vim-just',
+    'https://github.com/noprompt/vim-yardoc',
+    'https://github.com/prabirshrestha/async.vim',
+    'https://github.com/prabirshrestha/vim-lsp',
+    'https://github.com/preservim/vim-markdown',
+    'https://github.com/reedes/vim-lexical',
+    'https://github.com/reedes/vim-litecorrect',
+    'https://github.com/rodjek/vim-puppet',
+    'https://github.com/rust-lang/rust.vim',
+    'https://github.com/shawncplus/phpcomplete.vim',
+    'https://github.com/stevearc/aerial.nvim',
+    'https://github.com/tpope/vim-abolish',
+    'https://github.com/tpope/vim-commentary',
+    'https://github.com/tpope/vim-dispatch',
+    'https://github.com/tpope/vim-fugitive',
+    'https://github.com/tpope/vim-rails',
+    'https://github.com/tpope/vim-repeat',
+    'https://github.com/tpope/vim-rhubarb',
+    'https://github.com/tpope/vim-speeddating',
+    'https://github.com/tpope/vim-surround',
+    'https://github.com/Valloric/ListToggle',
+    'https://github.com/vim-ruby/vim-ruby',
+    'https://github.com/vim-scripts/utl.vim',
+    'https://github.com/w0ng/vim-hybrid',
+    'https://github.com/wellle/targets.vim',
+})

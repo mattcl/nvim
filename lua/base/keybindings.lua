@@ -26,7 +26,7 @@ ks('n', 'N', 'Nzz', {noremap = true}) -- prev result
 
 --[[ increment/decrement numeric values --]]
 ks('n', '+', '<C-a>', {noremap = true}) -- increase
-ks('n', '-', '<C-a>', {noremap = true}) -- decrease
+ks('n', '-', '<C-x>', {noremap = true}) -- decrease
 
 --[[ toggle listchars --]]
 ks('n', '<leader>i', ':set list!<cr>', {noremap = true, silent = true})
@@ -57,10 +57,9 @@ ks('n', 'bN',        ':BufferLineMoveNext<cr>',        {noremap = true, silent =
 ks('n', 'bP',        ':BufferLineMovePrev<cr>',        {noremap = true, silent = true}) -- move buffer left
 ks('n', '<Space>bb', ':BufferLineSortByDirectory<cr>', {noremap = true, silent = true}) -- sort buffers
 
---[[ telescope ]]--
-local builtin = require('telescope.builtin')
+--[[ fzf lua ]]--
+local fzflua = require('fzf-lua')
 
-ks('n', '<c-p>',      builtin.find_files,                {}) -- open file
-ks('n', '<leader>ff', builtin.current_buffer_fuzzy_find, {}) -- find in file
-ks('n', '<leader>fg', builtin.live_grep,                 {}) -- grep in workdir
-ks('n', '<leader>fb', builtin.buffers,                   {}) -- find buffer
+ks('n', '<c-p>',      fzflua.files,      {}) -- open file
+ks('n', '<leader>fg', fzflua.live_grep,  {}) -- grep in workdir
+ks('n', '<leader>fb', fzflua.buffers,    {}) -- find buffer
