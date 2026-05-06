@@ -60,6 +60,12 @@ ks('n', '<Space>bb', ':BufferLineSortByDirectory<cr>', {noremap = true, silent =
 --[[ fzf lua ]]--
 local fzflua = require('fzf-lua')
 
-ks('n', '<c-p>',      fzflua.files,      {}) -- open file
-ks('n', '<leader>fg', fzflua.live_grep,  {}) -- grep in workdir
-ks('n', '<leader>fb', fzflua.buffers,    {}) -- find buffer
+ks('n', '<c-p>',      fzflua.files,                 {}) -- open file
+ks('n', '<leader>fg', fzflua.live_grep,             {}) -- grep in workdir
+ks('n', '<leader>fb', fzflua.buffers,               {}) -- find buffer
+ks('n', 'gd',         fzflua.lsp_definitions,       {})
+ks('n', 'gi',         fzflua.lsp_implementations,   {})
+ks('n', 'gr',         fzflua.lsp_references,        {})
+ks('n', '<space>ff',  fzflua.lsp_finder,            {})
+ks('n', '<space>i',   fzflua.diagnostics_document,  {})
+ks('n', '<space>q',   fzflua.diagnostics_workspace, {})
